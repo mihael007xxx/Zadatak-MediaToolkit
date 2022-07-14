@@ -1,0 +1,19 @@
+<div class="content-buttons-container">
+
+    <i class="fa fa-arrow-left" (click)="onBackClick()" aria-hidden="true" *ngIf="!showContentButtons"></i>
+
+
+    <div *ngIf="showContentButtons">
+
+        <button class="btn-content" (click)="onPlayersListClick()">Lista igraca</button>
+        <button class="btn-content">Unos novog igraca</button>
+        <button class="btn-content">Pregled svakog igraca</button>
+        <button class="btn-content">Unos novih utakmica</button>
+        <button class="btn-content">Pregled svakog meca</button>
+        <button class="btn-content">Lista svih meceva</button>
+
+    </div>
+
+    <app-players-list *ngIf="showPlayers"></app-players-list>
+
+</div>
