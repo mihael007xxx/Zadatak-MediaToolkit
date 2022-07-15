@@ -1,0 +1,14 @@
+app-players-list {
+    width: 100vw;
+    height: calc(100vh - 145px);
+    position: fixed;
+    top: 80px;
+    left: 0;
+
+    .player-table-content {
+        width: inherit;
+        height: inherit;
+        text-align: -webkit-center;
+        overflow: auto;
+    }
+}

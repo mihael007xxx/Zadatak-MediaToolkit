@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from 'src/app/interfaces/player.interface';
+import { DataManagmentService } from 'src/app/service/data-managment.service';
 
 @Component({
   selector: 'app-content-buttons',
@@ -7,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentButtonsComponent implements OnInit {
 
-  public showPlayers: boolean = false;
-  public showContentButtons: boolean = true;
+  public showPlayers: boolean = true;
+  public showContentButtons: boolean = false;
+  public players: Player[] = [];
 
-  constructor() { }
+  constructor(
+    protected dataService: DataManagmentService
+  ) { }
 
   ngOnInit(): void {
   }

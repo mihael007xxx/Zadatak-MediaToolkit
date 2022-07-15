@@ -1,1 +1,17 @@
-<p>players-list works!</p>
+<div class="player-table-content">
+    <table>
+        <tr>
+            <th>id</th>
+            <th>ime</th>
+            <th>prezime</th>
+            <th>bodovi</th>
+        </tr>
+        <tr *ngFor="let player of players">
+            <td>{{player.id}}</td>
+            <td>{{player.name}}</td>
+            <td>{{player.surname}}</td>
+            <td>{{player.points}}</td>
+        </tr>
+    </table>
+
+</div>
