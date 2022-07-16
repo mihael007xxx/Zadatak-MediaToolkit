@@ -9,8 +9,9 @@ import { DataManagmentService } from 'src/app/service/data-managment.service';
 })
 export class ContentButtonsComponent implements OnInit {
 
-  public showPlayers: boolean = true;
-  public showContentButtons: boolean = false;
+  public showPlayers: boolean = false;
+  public showMatches: boolean = false;
+  public showContentButtons: boolean = true;
   public players: Player[] = [];
 
   constructor(
@@ -29,6 +30,12 @@ export class ContentButtonsComponent implements OnInit {
   public onBackClick() {
     this.showContentButtons = true;
     this.showPlayers = false;
+    this.showMatches = false;
+  }
+
+  public onNewMatchClick() {
+    this.showMatches = !this.showMatches;
+    this.showContentButtons = false;
   }
 
 }

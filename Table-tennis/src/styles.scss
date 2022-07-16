@@ -1,16 +1,73 @@
 @import "app/content-buttons/content-buttons/content-buttons.component.scss";
 @import "app/playersList/players-list/players-list.component.scss";
 @import "app/app.component.scss";
-
-
-
-
+@import "app/matches/matches/matches.component.scss";
 
 table {
     border: 1px solid black;
     width: 80vw;
+    text-align: center;
     tr:nth-child(even) {
         border: 1px solid #cdcdcd;
         background-color: lightgray;
     }
+    tr > th {
+        border-bottom: 1px solid black;
+    }
+}
+
+.label {
+    font-size: 20px;
+    font-family: "Sans-serif";
+}
+
+.input-control {
+    border-radius: 2px;
+    border: 1px solid #cdcdcd;
+    height: 20px;
+    margin-top: 3px;
+    margin-bottom: 2px;
+    font-size: 15px;
+    font-family: "Sans-serif";
+}
+
+.display-block-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrong-input {
+    border: 2px solid red;
+    border-radius: 2px;
+}
+
+.pop-up-container-mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: grey;
+    opacity: 0.5;
+    z-index: 1;
+}
+.pop-up-data {
+    position: fixed;
+    width: 60%;
+    height: 60%;
+    background-color: white;
+    opacity: 1;
+    z-index: 2;
+    top: 20%;
+    left: 20%;
+    overflow: auto;
+    border-radius: 5px;
+    table {
+        width: 100%;
+    }
+}
+
+.overview-item {
+    text-decoration: underline;
+    cursor: pointer;
 }

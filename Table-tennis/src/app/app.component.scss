@@ -8,23 +8,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 8px 0;
-}
-
-p {
-    margin: 0;
-}
-
-.spacer {
-    flex: 1;
-}
-
 .toolbar {
     position: absolute;
     top: 0;
@@ -36,6 +19,8 @@ p {
     background-color: #1976d2;
     color: white;
     font-weight: 600;
+    justify-content: center;
+    font-size: 30px;
 }
 
 .content {
@@ -52,8 +37,11 @@ p {
     width: 100%;
     position: fixed;
     bottom: 0px;
-    height: 65px;
     left: 0;
+    height: 30px;
     right: 0;
-    border-top: 1px solid black;
+    border-top: 1px solid #cdcdcd;
+    inset-block-end: auto;
+    display: flex;
+    justify-content: flex-end;
 }

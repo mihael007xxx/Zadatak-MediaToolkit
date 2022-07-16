@@ -5,15 +5,11 @@
 
     <div *ngIf="showContentButtons">
 
-        <button class="btn-content" (click)="onPlayersListClick()">Lista igraca</button>
-        <button class="btn-content">Unos novog igraca</button>
-        <button class="btn-content">Pregled svakog igraca</button>
-        <button class="btn-content">Unos novih utakmica</button>
-        <button class="btn-content">Pregled svakog meca</button>
-        <button class="btn-content">Lista svih meceva</button>
+        <button class="btn-content" (click)="onPlayersListClick()">Manage players</button>
+        <button class="btn-content" (click)="onNewMatchClick()">Manage games</button>
 
     </div>
 
     <app-players-list *ngIf="showPlayers"></app-players-list>
-
+    <app-matches *ngIf="showMatches"></app-matches>
 </div>

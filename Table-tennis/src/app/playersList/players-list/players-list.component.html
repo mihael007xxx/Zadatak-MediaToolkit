@@ -1,17 +1,52 @@
+<div class="new-player-container">
+    <div class="display-block-row">
+        <label class="label">Name</label>
+        <input type="text" class="input-control" [(ngModel)]="name">
+    </div>
+    <div class="display-block-row">
+        <label class="label">Surname</label>
+        <input type="text" class="input-control" [(ngModel)]="surname">
+    </div>
+    <button (click)="onAddNewClick()" class="btn-insert" [class.disabled]="name === '' || surname === ''">Insert new
+        player</button>
+</div>
+
+
 <div class="player-table-content">
     <table>
         <tr>
-            <th>id</th>
-            <th>ime</th>
-            <th>prezime</th>
-            <th>bodovi</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Sets won</th>
+            <th>Overview</th>
         </tr>
         <tr *ngFor="let player of players">
             <td>{{player.id}}</td>
             <td>{{player.name}}</td>
             <td>{{player.surname}}</td>
             <td>{{player.points}}</td>
+            <td><a class="overview-item" (click)="onOverviewClick(player)">overview</a></td>
         </tr>
     </table>
 
+</div>
+
+
+<div class="pop-up-container-mask" *ngIf="isOverview" (click)="onOverviewClick()">
+</div>
+
+<div class="pop-up-data" *ngIf="isOverview">
+    <table>
+        <tr>
+            <th>Player 1</th>
+            <th>Player 2</th>
+            <th>Result</th>
+        </tr>
+        <tr *ngFor="let match of playerMatches">
+            <td>{{match.player1.name}}</td>
+            <td>{{match.player2.name}}</td>
+            <td>{{getStringResult(match)}}</td>
+        </tr>
+    </table>
 </div>

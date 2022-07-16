@@ -1,0 +1,73 @@
+app-matches {
+    width: 100vw;
+    height: calc(100vh - 145px);
+    position: fixed;
+    top: 80px;
+    left: 0;
+
+    .new-matches-container {
+        width: 30%;
+        margin-left: 5%;
+
+        .display-block-row {
+            margin-bottom: 10px;
+        }
+
+        .input-number {
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+        }
+
+        .select-input {
+            cursor: pointer;
+            margin-top: 3px;
+            margin-bottom: 2px;
+            border-radius: 3px;
+            border: 1px solid #cdcdcd;
+            height: 25px;
+            width: 50%;
+            margin-right: 20px;
+        }
+
+        .btn-add-new-game {
+            height: 25px;
+            background-color: #1976d2;
+            color: white;
+            border: 1px solid #cdcdcd;
+            border-radius: 3px;
+            cursor: pointer;
+            &.disabled {
+                pointer-events: none;
+                cursor: not-allowed;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .matches-table-container {
+        width: inherit;
+        height: 78%;
+        padding-top: 20px;
+        text-align: -webkit-center;
+        overflow: auto;
+    }
+
+    .overview-container {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: row;
+
+        .overview-column {
+            width: 50%;
+            text-align-last: center;
+            display: grid;
+            > :first-child {
+                border-bottom: 1px solid #cdcdcd;
+                align-self: center;
+            }
+        }
+    }
+}
