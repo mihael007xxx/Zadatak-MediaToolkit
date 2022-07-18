@@ -18,7 +18,8 @@ Version can be different accordingly to Angular version support.
 Angular version of this project is 12.2.0.
 
 
-
+## Steps to install
+**1**
 After you have NPM/NODEJS installed, you should install AngularCLI to your editor(preferably Visual studio code) with the command npm install -g @angular/cli.
 After that, install all necessary dependencies with "NPM install".
 Last step is to run the application with command "ng serve", open your broswer on localhost:4200 and enjoy.
