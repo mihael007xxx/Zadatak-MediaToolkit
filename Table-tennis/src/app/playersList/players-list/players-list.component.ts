@@ -44,6 +44,10 @@ export class PlayersListComponent implements OnInit {
     this.dataService.saveNewListOfPlayers(this.players);
   }
 
+  /**
+   * Open player info
+   * @param player 
+   */
   public onOverviewClick(player?: Player) {
     this.isOverview = !this.isOverview;
     if (player) {
@@ -51,6 +55,11 @@ export class PlayersListComponent implements OnInit {
     }
   }
 
+  /**
+   * Get result for match and convert it to string
+   * @param match 
+   * @returns 
+   */
   public getStringResult(match: Match): string {
     let player1Counter = 0;
     let player2Counter = 0;

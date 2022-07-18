@@ -12,6 +12,10 @@ app-content-buttons {
         border: none;
         cursor: pointer;
         font-size: 25px;
+        border: 2px solid white;
+        &:hover {
+            border: none;
+        }
     }
 
     .fa.fa-arrow-left {

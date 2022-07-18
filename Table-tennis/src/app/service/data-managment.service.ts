@@ -38,6 +38,11 @@ export class DataManagmentService {
     }
   }
 
+  /**
+   * Increment points for player
+   * @param playerId 
+   * @param increment 
+   */
   public incrementPlayerPoint(playerId: number, increment: number) {
     let players = this.loadPlayers();
     let player = players.find(player => player.id == playerId);
@@ -57,10 +62,19 @@ export class DataManagmentService {
     localStorage.setItem(this.playersIdentifier, JSON.stringify(players));
   }
 
+  /***
+   * Save matches
+   */
   public saveNewListOfMatches(matches: Match[]) {
     localStorage.setItem(this.matchesIdentifier, JSON.stringify(matches));
   }
 
+  /**
+   * Check if set is valid or not
+   * @param val1
+   * @param val2 
+   * @returns 
+   */
   public isSetValid(val1: number, val2: number): boolean {
     let valid = false;
 

@@ -25,7 +25,7 @@
                 [class.wrong-input]="player1Points[3] < 0">
 
             <input class="input-number" #player1val5 [(ngModel)]="player1Points[4]"
-                (keyup)="checkInput(player1val4.value,'player-1-set-5')" [disabled]="!set4Valid"
+                (keyup)="checkInput(player1val5.value,'player-1-set-5')" [disabled]="!set4Valid"
                 [class.wrong-input]="player1Points[4] < 0">
         </div>
     </div>
@@ -54,7 +54,7 @@
                 [class.wrong-input]="player2Points[3] < 0">
 
             <input class="input-number" #player2val5 [(ngModel)]="player2Points[4]"
-                (keyup)="checkInput(player2val4.value,'player-2-set-5')" [disabled]="!set4Valid"
+                (keyup)="checkInput(player2val5.value,'player-2-set-5')" [disabled]="!set4Valid"
                 [class.wrong-input]="player2Points[4] < 0">
         </div>
     </div>
@@ -76,8 +76,8 @@
         </tr>
         <tr *ngFor="let match of matches">
             <td>{{match.id}}</td>
-            <td>{{match.player1.name}}</td>
-            <td>{{match.player2.name}}</td>
+            <td>{{match.player1.name}} {{match.player1.surname}}</td>
+            <td>{{match.player2.name}} {{match.player2.surname}}</td>
             <td><a class="overview-item" (click)="onOverviewClick(match)">overview</a></td>
         </tr>
     </table>
@@ -90,12 +90,12 @@
 <div class="pop-up-data" *ngIf="isOverview">
     <div class="overview-container">
         <div class="overview-column">
-            <label class="label">{{overviewMatch.player1.name}}</label>
+            <label class="label">{{overviewMatch.player1.name}} {{overviewMatch.player1.surname}}</label>
             <label class="label" *ngFor="let point of overviewMatch.player1Result">{{point}}</label>
 
         </div>
         <div class="overview-column">
-            <label class="label">{{overviewMatch.player2.name}}</label>
+            <label class="label">{{overviewMatch.player2.name}} {{overviewMatch.player2.surname}}</label>
             <label class="label" *ngFor="let point of overviewMatch.player2Result">{{point}}</label>
         </div>
 

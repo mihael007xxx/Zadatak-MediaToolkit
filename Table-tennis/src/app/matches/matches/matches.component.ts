@@ -27,14 +27,20 @@ export class MatchesComponent implements OnInit {
   public isOverview: boolean = false;
   public overviewMatch: Match = {} as Match;
 
-
   constructor(protected dataService: DataManagmentService) { }
 
+  /**
+   * Load data on init
+   */
   ngOnInit(): void {
     this.players = this.dataService.loadPlayers();
     this.matches = this.dataService.loadMatches();
   }
 
+  /**
+   * Assigne data on selectbox(Dropdown) click
+   * @param playerIdentifier 
+   */
   public onSelectClick(playerIdentifier: string) {
     if (playerIdentifier === 'first') {
       this.player1 = <Player>this.players.find(player => player.id == this.player1Id);
@@ -46,95 +52,70 @@ export class MatchesComponent implements OnInit {
 
   }
 
+  /**
+   * Manage data validation
+   * @param value 
+   * @param identifier 
+   */
   public checkInput(value: any, identifier: string) {
     var reg = new RegExp('^[0-9]*$');
 
     if (identifier === 'player-1-set-1' && value.length > 0 && value !== '-' && value !== -1) {
-      if (reg.test(value) === true) {
-        let numberVal = Number(value);
-      }
-      else {
+      if (!reg.test(value)) {
         this.player1Points[0] = -1;
       }
     }
 
     if (identifier === 'player-1-set-2' && value.length > 0 && value !== '-' && value !== -1) {
-      if (reg.test(value) === true) {
-        let numberVal = Number(value);
-      }
-      else {
+      if (!reg.test(value)) {
         this.player1Points[1] = -1;
       }
     }
 
     if (identifier === 'player-1-set-3' && value.length > 0 && value !== '-' && value !== -1) {
-      if (reg.test(value) === true) {
-        let numberVal = Number(value);
-      }
-      else {
+      if (!reg.test(value)) {
         this.player1Points[2] = -1;
       }
     }
 
     if (identifier === 'player-1-set-4' && value.length > 0 && value !== '-' && value !== -1) {
-      if (reg.test(value) === true) {
-        let numberVal = Number(value);
-      }
-      else {
+      if (!reg.test(value)) {
         this.player1Points[3] = -1;
       }
     }
 
     if (identifier === 'player-1-set-5' && value.length > 0 && value !== '-' && value !== -1) {
-      if (reg.test(value) === true) {
-        let numberVal = Number(value);
-      }
-      else {
+      if (!reg.test(value)) {
         this.player1Points[4] = -1;
       }
     }
 
     if (identifier === 'player-2-set-1' && value.length > 0 && value !== '-' && value !== -1) {
-      if (reg.test(value) === true) {
-        let numberVal = Number(value);
-      }
-      else {
+      if (!reg.test(value)) {
         this.player2Points[0] = -1;
       }
     }
 
     if (identifier === 'player-2-set-2' && value.length > 0 && value !== '-' && value !== -1) {
-      if (reg.test(value) === true) {
-        let numberVal = Number(value);
-      }
-      else {
+      if (!reg.test(value)) {
         this.player2Points[1] = -1;
       }
     }
 
     if (identifier === 'player-2-set-3' && value.length > 0 && value !== '-' && value !== -1) {
-      if (reg.test(value) === true) {
-        let numberVal = Number(value);
-      }
-      else {
+      if (!reg.test(value)) {
         this.player2Points[2] = -1;
       }
     }
 
     if (identifier === 'player-2-set-4' && value.length > 0 && value !== '-' && value !== -1) {
-      if (reg.test(value) === true) {
-        let numberVal = Number(value);
-      }
-      else {
+      if (!reg.test(value)) {
         this.player2Points[3] = -1;
       }
     }
 
     if (identifier === 'player-2-set-5' && value.length > 0 && value !== '-' && value !== -1) {
-      if (reg.test(value) === true) {
-        let numberVal = Number(value);
-      }
-      else {
+      if (!reg.test(value)) {
         this.player2Points[4] = -1;
       }
     }
@@ -190,6 +171,9 @@ export class MatchesComponent implements OnInit {
 
   }
 
+  /**
+   * On click add new game
+   */
   public addNewGame() {
     let match: Match = {
       id: this.matches.length,
@@ -212,6 +196,10 @@ export class MatchesComponent implements OnInit {
     this.resetFields();
   }
 
+  /**
+   * Check if button should be disabled
+   * @returns 
+   */
   public isButtonDisabled() {
     return this.set1Valid && this.set2Valid
       && this.set3Valid && this.set4Valid
@@ -219,6 +207,13 @@ export class MatchesComponent implements OnInit {
       && Object.keys(this.player1).length !== 0 && Object.keys(this.player2).length !== 0;
   }
 
+  /**
+   * Disable user to choose same player as oponent as him
+   * This method checks if players are the same
+   * @param playerId 
+   * @param identifier 
+   * @returns 
+   */
   public isPlayer1equalToTwo(playerId: number, identifier: string): boolean {
     if (identifier === 'first') {
       return this.player2Id == playerId;
@@ -230,6 +225,9 @@ export class MatchesComponent implements OnInit {
 
   }
 
+  /**
+   * Reset all feilds
+   */
   public resetFields() {
     this.player1Id = -1;
     this.player2Id = -1;
@@ -244,6 +242,10 @@ export class MatchesComponent implements OnInit {
     this.set5Valid = false;
   }
 
+  /**
+   * Open new window with match details
+   * @param match 
+   */
   public onOverviewClick(match?: Match) {
     this.isOverview = !this.isOverview;
     if (match) {

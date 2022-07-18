@@ -44,8 +44,8 @@
             <th>Result</th>
         </tr>
         <tr *ngFor="let match of playerMatches">
-            <td>{{match.player1.name}}</td>
-            <td>{{match.player2.name}}</td>
+            <td>{{match.player1.name}} {{match.player1.surname}}</td>
+            <td>{{match.player2.name}} {{match.player2.surname}}</td>
             <td>{{getStringResult(match)}}</td>
         </tr>
     </table>

@@ -21,18 +21,26 @@ export class ContentButtonsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  /**
+   * Show player content
+   */
   public onPlayersListClick() {
     this.showPlayers = !this.showPlayers;
     this.showContentButtons = false;
   }
 
+  /**
+   * Show main page
+   */
   public onBackClick() {
     this.showContentButtons = true;
     this.showPlayers = false;
     this.showMatches = false;
   }
 
+  /**
+   * Show matches container
+   */
   public onNewMatchClick() {
     this.showMatches = !this.showMatches;
     this.showContentButtons = false;
